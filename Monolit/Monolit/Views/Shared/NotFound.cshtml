@@ -1,0 +1,36 @@
+﻿@using System
+@{
+    // 404 Not Found
+    //
+    // This view was added by NotFoundMVC
+    // For inspiration see: https://www.google.be/search?q=example+404+page
+    //
+    // The following properties are available in the ViewBag:
+    // ViewData["RequestedUrl"]
+    // ViewData["ReferrerUrl"]
+    //
+
+    ViewBag.Title = "Страница не найдена";
+}
+<div class="container page404">
+    
+    <h1>404</h1>
+    <h2 >
+        Такое иногда случается. Самые вероятные причины - устаревшая</br> ссылка
+        или страница была удалена автором.
+    </h2>
+    <p>Страница не найдена: @ViewBag.RequestedUrl</p>
+    @if (ViewBag.ReferrerUrl != null)
+    {
+    <h3> <a href="@ViewBag.ReferrerUrl">Вернуться назад</a>.</h3>
+    }
+    <div style="margin:5em 0em;">
+    <script type="text/javascript">
+    var GOOG_FIXURL_LANG = '@System.Globalization.CultureInfo.CurrentCulture.Name.Substring(0,2)';
+    var GOOG_FIXURL_SITE = '@Request.Url.GetLeftPart(UriPartial.Authority)'
+    </script>
+    <script type="text/javascript" src="//linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>
+    @* Error page must be longer than 512 bytes for IE and Chrome to show it. So add padding in case we're short. *@
+    @(new string(' ', 512))
+        </div>
+</div>

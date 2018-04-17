@@ -1,0 +1,1458 @@
+﻿body {
+    padding-top: 130px;
+  
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+@font-face {
+    font-family: MullerExtraBold;
+    src: url('../fonts/Fontfabric - MullerExtraBold.otf');
+}
+
+@font-face {
+    font-family: MullerRegular;
+    src: url('/fonts/Fontfabric - MullerRegular.otf');
+}
+
+@font-face {
+    font-family: MullerHeavy;
+    src: url('/fonts/Fontfabric - MullerHeavy.otf');
+}
+
+@font-face {
+    font-family: MullerBold;
+    src: url('/fonts/Fontfabric - MullerBold.otf');
+}
+
+@font-face {
+    font-family: MullerBlack;
+    src: url('/fonts/Fontfabric - MullerBlack.otf');
+}
+.mnbut {
+    font-family: MullerBold;
+    background-color: #ffa240;
+    border: none;
+    border-bottom: 3px solid #e08729;
+    border-radius:0;
+}
+
+.rbut {
+    font-family: MullerBold;
+    background-color: #ee7f80;
+    border: none;
+    border-bottom: 3px solid #c25f60;
+    border-radius: 0;
+    font-size: 18px;
+}
+
+    .rbut:hover {
+        font-family: MullerBold;
+        background-color: #3a385e;
+        border: none;
+        border-bottom: 3px solid #3a385e;
+        border-radius: 0;
+        font-size: 20px;
+    }
+
+ 
+
+.set_menu {
+    background-color: #3a385e;
+    border-radius: 0;
+    border-bottom: 3px solid #323150;
+}
+.Header_slide {
+    background-image: url(template/Main_page/top_fon.png);
+    background-repeat: no-repeat;
+    height: 661px;
+    background-size: 1920px 661px;
+    background-position: top center;
+    margin-top: -1.5em;
+}
+
+.block-priority {
+    background-image: url(template/Main_page/priority.jpg);
+    background-repeat: no-repeat;
+    height: 750px;
+    background-size: 1920px 750px;
+    background-position: top center;
+    margin-top: 5em;
+}
+
+.blocks-work {
+    background-image: url(template/Main_page/work14.jpg);
+    background-repeat: no-repeat;
+    height: 680px;
+    background-size: 1920px 680px;
+    background-position: top center;
+    margin-top: 5em;
+}
+
+.blocks-sotrud {
+    background-color: #f8f8f8;
+    height: 500px;
+    background-size: 1920px 500px;
+}
+
+
+.menu-email {
+    color: #ffffff;
+    background-color: #f16d6e;
+    border-bottom: 3px solid #cc4f50;
+}
+
+.menu-email-lg {
+    padding: 25px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    width: 245px;
+    height: 360px;
+    float: right;
+    margin: 130px 40px 0px 0px;
+}
+
+    .menu-email-lg p {
+        font-family: MullerExtraBold;
+        font-size: 19px;
+    }
+
+    .menu-email-lg a {
+        margin: 18px;
+    }
+input#EmailAdrress, input#UserName, input#NameF, input#PhoneF, input#Phone, input#PhoneF1, input#EmailF {
+    height: 40px;
+    width: 210px;
+    margin: 10px 0px;
+    border: none;
+    border-top: 3px solid #b5b5b5;
+    outline: none;
+    background-repeat: no-repeat;
+    background-position: 7px;
+    padding-left: 40px;
+    color: #333;
+}
+
+input#UserName, input#NameF {
+    background-image: url(template/icon/nameI.jpg);
+}
+
+input#Phone, input#PhoneF, input#PhoneF1 {
+    background-image: url(template/icon/phonel.jpg);
+}
+
+input#EmailAdrress, input#EmailF {
+    background-image: url(template/icon/emaill.jpg);
+}
+.slide_text {margin-top:220px;color:#fff;padding-right:20px;}
+.slide_text h1 {font-size:45px; font-family:MullerBold;}
+.slide_text p {font-size: 25px;font-family: MullerBold;color:#ddd;}
+.slide_text .mnbut{font-size: 22px;}
+
+@media (max-width: 768px) {
+.slide_text {margin-top: 30px;}
+.slide_text .mnbut {font-size: 16px;}
+.slide_text h1 {font-size: 28px;}
+.slide_text p {font-size: 16px;}
+.menu-email-lg  {margin-top:30px;}
+}
+@media (max-width: 992px) {
+slide_text .mnbut {font-size: 20px;}
+.slide_text h1 {font-size: 40px;}
+.slide_text h1 p {font-size: 20px; }
+}
+
+
+.Header-block {
+    border-left: 16px solid #ee7f80;
+    padding-left: 1em;
+}
+    .Header-block h1 {
+        font-size: 32px;
+        font-family: MullerBold;
+        color: #333;
+    }
+    .Header-block h2 {
+        font-size: 18px;
+        font-family: MullerBold;
+        color: #999;
+        margin-top:-10px;
+    }
+
+.Header-block-dark {
+    border-left: 16px solid #ffffff;
+    padding-left: 1em;
+    margin-top:5em;
+}
+
+    .Header-block-dark h1 {
+        font-size: 32px;
+        font-family: MullerBold;
+        color: #fff;
+    }
+
+    .Header-block-dark h2 {
+        font-size: 18px;
+        font-family: MullerBold;
+        color: #ee7f80;
+        margin-top: -10px;
+    }
+
+.blocks-uslugi {
+    margin-top: 3em;
+}
+
+.usl-block {width: 300px;height: 210px;position: relative;}
+.usl-block .header-usl {width:100%; height:3em; background-color:#f16d6e; opacity:0.7;position:absolute;bottom:0; }
+.usl-block span {color: #fff;font-size: 20px;font-family: MullerRegular;margin: 15px 10px 10px 20px;position: absolute;bottom: 0;}
+.usl-block:hover .header-usl {width: 100%;height: 100%;}
+.usl-block:hover span { top:50%; margin-top:-20px; text-align:center;}
+@media (min-width: 320px) {
+.usl-block {width: 100px;height: 70px;}
+.usl-block span {font-size: 12px;}
+}
+@media (min-width: 400px) {
+.usl-block {width: 110px;height: 90px;}
+.usl-block span {font-size: 12px;}
+}
+@media (min-width: 500px) {
+.usl-block {width: 160px;height: 110px;}
+.usl-block span {font-size: 13px;}
+}
+@media (min-width: 570px) {
+.usl-block {width: 180px;height: 120px;}
+.usl-block span {font-size: 14px;}
+}
+@media (min-width: 768px) {
+.usl-block {width: 200px;height: 150px;}
+.usl-block span {font-size: 14px;}
+}
+
+@media (min-width: 992px) {
+.usl-block {width: 260px; height: 190px;}
+.usl-block span{ font-size:16px;}
+}
+
+@media (min-width: 1200px) {
+.usl-block {width: 300px;height: 210px;}
+.usl-block span {font-size: 20px;}
+}
+
+.pri-bls {width:100%;margin-top:5em;}
+.pri-bls img {width:130px;}
+
+
+        .pri-bls .descr-pri h3 {
+            font-family: MullerRegular;
+            font-size: 18px;
+            color: #ffffff;
+        }
+
+        .pri-bls .descr-pri h4 {
+            font-family: MullerRegular;
+            font-size: 14px;
+            color: #ffffff;
+            opacity: 0.8;
+        }
+    .pri-bls .descr-pri {
+        text-align: center;
+    }
+@media (min-width: 320px) {
+    .pri-bls img {
+        width: 90px;
+    }
+    .pri-bls .descr-pri {
+        text-align: left;
+    }
+    .pri-bls img {float:left;}
+    .pri-bls {
+        margin-top: 1em;
+    }
+        .pri-bls h4 {
+            padding-left: 8em;
+        }
+        .pri-bls h3 {
+            padding-top: 1.2em;
+            padding-left: 6em;
+        }
+}
+
+@media (min-width: 400px) {
+    .pri-bls img {
+        width: 90px;
+    }
+}
+
+@media (min-width: 500px) {
+.pri-bls img {width: 90px;}
+    .prior-cor {
+        margin-top: 0em;
+    }
+    .pri-bls .descr-pri {
+        text-align: left;
+    }
+}
+  
+    @media (min-width: 570px) {
+        .pri-bls img {width: 90px;}
+        .prior-cor {
+            margin-top: 2em;
+        }
+}
+
+@media (min-width: 768px) {
+.pri-bls img {width: 115px;}
+    .pri-bls .descr-pri h3 {
+        font-size: 14px;
+    }
+    .pri-bls {
+        margin-top: 5em;
+    }
+    .prior-cor {
+        margin-top: 4em;
+    }
+    .col-pad {
+        padding-left: 0em;
+    }
+    .pri-bls img {
+        float: none;
+    }
+    .pri-bls h4 {
+        padding-left: 0em;
+    }
+
+    .pri-bls h3 {
+        padding-top: 0em;
+        padding-left: 0em;
+    }
+    .pri-bls .descr-pri {
+        text-align: center;
+    }
+}
+
+@media (min-width: 992px) {
+.pri-bls img {width: 120px;}
+    .col-pad {
+        padding-left: 4em;
+    }
+    .pri-bls .descr-pri h3 {font-size:16px;}
+    .prior-cor {
+        margin-top: 4em;
+    }
+}
+
+@media (min-width: 1200px) {
+.pri-bls img {width: 130px;}
+    .col-pad {
+        padding-left: 4em;
+    }
+    .pri-bls .descr-pri h3 {
+        font-size: 18px;
+    }
+    .prior-cor {
+        margin-top:5em;
+    }
+    .col-pad {
+        padding-left: 4em;
+    }
+    .descr-pri-text { float:none;
+    }
+}
+.work-bls h3 {
+color:#fff;
+font-family:MullerBold;
+}
+@media (min-width: 200px) {
+    .row-work {
+        margin-top: 1em;
+    }
+
+    .work-bls .descr-work {
+        text-align: center;
+    }
+
+    .descr-work img {
+        height: 20px;
+    }
+
+    .work-bls h3 {
+        font-size: 9px;
+    }
+
+    .work-bls {
+        margin-top: 5em;
+    }
+    .blocks-sotrud {
+        height: 900px;
+        background-size: 1920px 900px;
+    }
+}
+
+
+
+@media (min-width: 320px) {
+
+        .work-bls .descr-work { text-align:center;
+        }
+    .descr-work img {
+        height: 40px;
+    }
+
+    .work-bls h3 {
+        font-size: 11px;
+    }
+    .work-bls {
+        margin-top: 3em;
+    }
+    .blocks-sotrud {
+        height: 850px;
+        background-size: 1920px 850px;
+    }
+}
+
+@media (min-width: 380px) {
+    .descr-work img {
+        height: 50px;
+    }
+
+    .work-bls h3 {
+        font-size: 14px;
+    }
+    .blocks-sotrud {
+        height: 760px;
+        background-size: 1920px 760px;
+    }
+}
+
+@media (min-width: 420px) {
+    .blocks-sotrud {
+        height: 710px;
+        background-size: 1920px 710px;
+    }
+}
+
+@media (min-width: 460px) {
+    .blocks-sotrud {
+        height: 670px;
+        background-size: 1920px 670px;
+    }
+}
+
+@media (min-width: 500px) {
+    .descr-work img {
+        height: 60px;
+    }
+
+    .work-bls h3 {
+        font-size: 16px;
+    }
+    .blocks-sotrud {
+        height: 600px;
+        background-size: 1920px 600px;
+    }
+}
+
+@media (min-width: 600px) {
+    .blocks-sotrud {
+        height: 550px;
+        background-size: 1920px 550px;
+    }
+}
+
+    @media (min-width: 768px) {
+        .work-bls {
+            margin-top: 0em;
+        }
+
+        .row-work {
+            margin-top: 5em;
+        }
+
+        .descr-work img {
+            height: 70px;
+        }
+
+        .work-bls h3 {
+            font-size: 18px;
+        }
+
+        .blocks-sotrud {
+            height: 520px;
+            background-size: 1920px 520px;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .descr-work img {
+            height: 90px;
+        }
+
+        .work-bls h3 {
+            font-size: 20px;
+        }
+
+        .blocks-sotrud {
+            height: 430px;
+            background-size: 1920px 430px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .descr-work img {
+            height: 90px;
+        }
+
+        .blocks-sotrud {
+            height: 430px;
+            background-size: 1920px 430px;
+        }
+    }
+
+    .blocks-sotrud p {
+        text-align: justify;
+    }
+
+.info-sotrud {
+    height: 650px;
+}
+
+
+    .blk-info h4 { 
+        padding: 1em 0 0em 0;
+        color:#444;
+        font-family:MullerBold;
+        font-size:18px;
+    }
+    .blk-info .line-info {
+        height: 3px;
+        width: 40px;
+        background-color: #ee7f80;
+        margin: 4px auto;
+    }
+    .blk-info p {
+        color: #b0b0b0;
+        font-family:MullerRegular;
+        font-size:14px;
+        text-align:justify;
+        padding: 12px 20px 30px 20px;
+    }
+
+.block-info .rbut { margin-top:-1em;}
+.block-info .blk-info {
+    margin-top: -1em;
+}
+
+@media (min-width: 200px) {
+    .block-info h4 {
+       text-align:center;
+    }
+    .info-sotrud {
+        height: 1300px;
+        width:100%;
+    }
+    
+    .blk-info {
+        border: 0;
+        display: inline-block;
+        width:100%;
+        text-align:center;
+    }
+    .info-sotrud .row-top {margin-top:3em;}
+
+    .info-sotrud img {
+        border-bottom: 3px solid #ee7f80;
+        width: 200px;
+        margin: 2.5em auto;
+        margin-bottom:0;
+    }
+    .block-info {text-align:center;}
+    
+    .block-info .blk-info {
+        position: relative;
+        left: 0px;
+    }
+    
+    .block-info .rbut {
+        font-size: 12px;
+    }
+ 
+}
+
+
+
+    @media (min-width: 768px) {
+        .info-sotrud img {margin:0;}
+
+        .info-sotrud {
+            height: 620px;
+            width: 100%;
+        }
+
+        .blk-info h4 {
+            padding: 1em 0 0em 0;
+        }
+
+        .block-info .blk-info {
+            position: initial;
+        }
+
+        .blk-info .line-info {
+            display: initial;
+        }
+
+        .blk-info {
+            height: 180px;
+            border: 1px solid #ddd;
+            border-top: 0;
+            text-align: center;
+        }
+
+        .block-info .rbut {
+            font-size: 18px;
+        }
+
+        .info-sotrud img {
+            border-bottom: 3px solid #ee7f80;
+            width: 220px;
+            float: none;
+        }
+
+        .info-sotrud .row-top {
+            margin-top: 4em;
+        }
+
+        .info-sotrud .block-info {
+            width: 220px;
+        }
+
+        .info-sotrud .blk-info {
+            height: 210px;
+        }
+
+            .info-sotrud .blk-info p {
+                font-size: 13px;
+            }
+    }
+
+    @media (min-width: 992px) {
+        .info-sotrud .block-info {
+            width: 300px;
+        }
+
+        .info-sotrud img {
+            width: 300px;
+        }
+
+        .info-sotrud .blk-info p {
+            font-size: 14px;
+        }
+
+        .info-sotrud .blk-info {
+            height: 180px;
+        }
+    }
+
+.footer-block {
+    height:180px;
+    padding-top:2em;
+    color:#ffffff;
+    background-color:#3a385e;
+    border-top:5px solid #ee7f80;
+
+}
+
+.logo40 {
+   
+    display:table;
+}
+
+.top-block .logo40  {
+    margin-top:0.5em;
+}
+
+.logo40 .des-logo {
+        display: table-cell;
+        padding-left: 15px;
+        vertical-align: middle;
+    }
+
+    .logo40 .des-logo #Name_Company {
+        display: block;
+        font-family: MullerRegular, Calibri;
+        font-size: 21px;
+        color: #ee7f80;
+        font-weight: bold;
+        padding-top: 0;
+    }
+
+    .logo40 .des-logo #Des_Company {
+        display: block;
+        font-family: MullerRegular, Calibri;
+        font-size: 13px;
+        color: #fff;
+    }
+
+  .top-block  .logo40 .des-logo #Des_Company {
+        display: block;
+        font-family: MullerRegular, Calibri;
+        font-size: 14px;
+        color: #3a385e;
+    }
+
+.footer-contact {
+    margin-top:1.8em;
+    padding-left:2em;
+}
+
+.footer-contact span {
+    display: block;
+    font-family: MullerRegular, Calibri;
+    font-size:16px;
+}
+
+.footer_but {
+    color: #ee7f80;
+    background-color: #3a385e;
+    border: 2px solid #fff;
+    font-family: MullerRegular, Calibri;
+    font-size: 16px;
+    border-radius: 2px;
+    margin-top: 1.6em;
+    margin-bottom:1em;
+}
+
+    .footer_but:hover {
+        color: #fff;
+        background-color: #ee7f80;
+        border-color:#fff;
+    }
+
+/* <p>&copy; @DateTime.Now.Year – приложение ENGANT ASP.NET</p>*/
+@media (min-width: 200px) {
+    .footer-block {
+        height: 330px;
+    }
+}
+
+
+    @media (min-width: 768px) {
+        .footer-block {
+            height: 180px;
+        }
+            .footer-contact span {
+            font-size: 14px;
+        }
+    }
+
+    @media (min-width: 992px) {
+        .footer-contact span {
+            font-size: 16px;
+        }
+    }
+
+    .top-block {
+        height:110px;
+        width:100%;
+        margin-top:-130px;
+    }
+
+
+    .top-contact #top-email {
+        background-repeat: no-repeat;
+        background-image: url(template/icon/message.png);
+        padding-left: 55px;
+        padding-bottom: 5px;
+        height: 35px;
+        font-family: MullerRegular;
+        font-size: 20px;
+        color: #3a385e;
+        margin-top: 1em;
+    }
+
+    .top-contact #top-phone {
+        background-repeat: no-repeat;
+        background-image: url(template/icon/telephone.png);
+        padding: 3px 0px 5px 35px;
+        height: 35px;
+        font-family: MullerRegular;
+        font-size: 20px;
+        color: #3a385e;
+        vertical-align: top;
+    }
+
+.top_but {
+    color: #fff;
+    background-color: #ee7f80;
+    border-color: #fff;
+    font-family: MullerRegular, Calibri;
+    font-size: 16px;
+    border-radius: 2px;
+}
+
+    .top_but:hover {
+
+        color: #ee7f80;
+        background-color: #ffffff;
+        border: 2px solid #ee7f80;
+    }
+
+@media (min-width: 280px) {
+    body {
+        padding-top: 270px;
+    }
+
+    .top-block {
+        height: 270px;
+        width: 100%;
+        margin-top: -270px;
+    }
+
+        .top-block .logo40 {
+            margin: 1em auto;
+        }
+        
+        
+    
+    .top-contact #top-phone {
+        margin-left: 1em;
+    }
+    .top-contact #top-phone, .top-contact #top-email {
+        font-size: 18px;
+        display: block;
+    }
+
+    .top-con {
+        margin:0 auto;
+        width:100%;
+    }
+    .top-contact {
+        width: 200px;
+        margin: 0 auto;
+    }
+    .top_but {
+        width:150px;
+       margin:1em 0 0 1.5em;
+    }
+}
+
+@media (min-width: 440px) {
+    body {
+        padding-top: 250px;
+    }
+
+    .top-block {
+        height: 250px;
+        margin-top: -250px;
+    }
+
+    .top-contact #top-phone, .top-contact #top-email {
+        font-size: 18px;
+        display: initial;
+    }
+    .top-contact {
+        width: 400px;
+        margin: 0 auto;
+    }
+    .top-con {
+        margin: 0 auto;
+        width:100%;
+    }
+    .top_but {
+       position:relative;
+       left:50%;
+       margin-left:-75px;
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        padding-top: 130px;
+    }
+
+    .top-block {
+        height: 130px;
+        width: 100%;
+        margin-top: -130px;
+    }
+
+    .top-contact {
+        width: 400px;
+        margin: 0;
+        margin-left: 2em;
+        margin-top: 2em;
+    }
+
+}
+
+@media (min-width: 800px) {
+
+    .top-contact {
+       position:relative;
+       float:right;
+       right:1em;
+       
+    }
+}
+
+
+
+@media (min-width: 1200px) {
+    .top-contact {
+        float: none;
+        width: 690px;
+        display: inline-block;
+    }
+
+    .top-con {
+        margin-top: 1.3em;
+    }
+
+    .top-contact #top-phone, .top-contact #top-email {
+        font-size: 20px;
+        display: inline;
+    }
+
+    .top-contact .top_but {
+        position: relative;
+        width: 200px;
+        left: 0;
+        margin: 0;
+        float: right;
+        right: 1em;
+        top: -2.1em;
+    }
+}
+    .contentM h1 {
+        color: #333;
+        font-family: MullerBold;
+        text-transform: uppercase;
+        margin-top: 1.3em;
+    }
+
+.contentM {
+    float: left;
+}
+
+
+
+.PageContext {
+    text-align: justify;
+    font-family: MullerRegular;
+    font-size: 16px;
+    color: #333;
+    margin-top: 1.2em;
+    background-color: #faf9ff;
+    padding: 20px 20px;
+    text-align: justify;
+}
+
+    .PageContext h1, .PageContext h2, .PageContext h3 {
+        color: #333;
+        font-family: MullerExtraBold;
+    }
+
+@media (min-width:300px) {
+    .PageContext {
+        margin-left: 20px;
+    }
+
+        .PageContext .table {
+            width: 240px;
+        }
+
+            .PageContext .table tr {
+                font-size: 12px;
+            }
+    .contentM {
+        min-width: 300px;
+        margin-bottom: 180px;
+        padding: 0px 10px;
+    }
+    .contentM h1 {
+        font-size: 17px;
+        padding-left: 20px;
+    }
+
+    .PageContext h1 {
+        padding-left: 0px;
+    }
+
+    .PageContext h2 {
+        font-size: 20px;
+    }
+
+    .PageContext img {
+        width: 160px;
+    }
+}
+
+@media (min-width:430px) {
+    .contentM {
+        margin-bottom: 180px;
+    }
+
+    .PageContext .table {
+        width: 100%;
+    }
+
+        .PageContext .table tr {
+            font-size: 14px;
+        }
+}
+
+@media (min-width:470px) {
+    .PageContext img {
+        width: 170px;
+    }
+
+    .contentM {
+        margin-bottom: 130px;
+    }
+}
+
+@media (min-width:580px) {
+    .contentM h1 {
+        font-size: 18px;
+    }
+
+    .PageContext h2 {
+        font-size: 21px;
+    }
+
+    .contentM {
+        margin-bottom: 50px;
+        padding: 0px 0px;
+    }
+}
+
+@media (min-width:780px) {
+    .contentM {
+        width: 500px;
+    }
+
+    .PageContext img {
+        width: 160px;
+    }
+
+    .PageContext .table {
+        width: 500px;
+    }
+
+    .contentM .PageContext {
+        font-size: 14px;
+    }
+
+        .contentM .PageContext h2 {
+            font-size: 18px;
+        }
+
+    .PageContext {
+        margin-left: 0px;
+    }
+
+    .contentM h1 {
+        font-size: 20px;
+        padding-left: 0px;
+    }
+
+    .PageContext h2 {
+        font-size: 24px;
+    }
+
+    .PageContext h1 {
+        font-size: 28px;
+    }
+
+    .PageContext h3 {
+        font-size: 20px;
+    }
+}
+
+
+
+@media (min-width:992px) {
+    .PageContext .table {
+        width: 630px;
+    }
+
+    .PageContext img {
+        width: 190px;
+    }
+
+    .contentM .PageContext {
+        font-size: 16px;
+    }
+
+    .contentM h1 {
+        font-size: 24px;
+    }
+
+    .contentM .PageContext h2 {
+        font-size: 21px;
+    }
+
+    .contentM {
+        width: 690px;
+    }
+}
+
+@media (min-width:992px) {
+    .contentM {
+        width: 640px;
+    }
+}
+
+
+@media (min-width:1200px) {
+    .contentM {
+        width: 800px;
+    }
+}
+
+/*Меню левое*/
+.vert_menu {
+    float: left;
+    width: 260px;
+    color: #fff;
+    background-color: #ed6a6b;
+}
+
+.vert_menu {
+    margin-top: 1.5em;
+    margin-right: 1.5em;
+    border-radius: 6px;
+    width: 275px;
+    float: left;
+}
+
+    .vert_menu h2 {
+        padding-left: 15px;
+        font-family: MullerExtraBold;
+        font-size: 24px;
+    }
+
+    .vert_menu ul {
+        margin-left: -0em;
+    }
+
+    .vert_menu li {
+        text-transform: uppercase;
+        font-family: MullerBold;
+        list-style-type: none;
+        border-bottom: 2px groove #fd6366;
+        margin-left: -2.8em;
+        height: auto;
+    }
+
+        .vert_menu li a {
+            display: block;
+            position: relative;
+            color: #fff;
+            padding: 15px 15px;
+            text-decoration: none;
+        }
+
+        .vert_menu li:last-child a {
+            display: block;
+            position: relative;
+            color: #fff;
+            padding-bottom: 0px;
+            text-decoration: none;
+        }
+
+        .vert_menu li.selected a, .vert_menu li:hover a {
+            color: #fff;
+        }
+
+        .vert_menu li.selected, .vert_menu li:hover {
+            background-color: #ffa240;
+            color: #fff;
+        }
+
+        .vert_menu li:last-child {
+            border: none;
+            padding-bottom: 15px;
+        }
+@media (min-width:300px) {
+    .vert_menu {
+        width: 190px;
+        font-size: 12px;
+        margin-left: -300px;
+        position: relative;
+        left: 0;
+    }
+
+        .vert_menu li {
+            margin-left: -3.35em;
+        }
+
+    .button_open_menu_info, .button_open_menu {
+        margin: 0;
+        position: fixed;
+        top: 28.45em;
+        left: -5.55em;
+        padding: 7px 20px 5px 20px;
+        background: #ce7374;
+        opacity: 0.8;
+        text-transform: uppercase;
+        color: #fff;
+        text-decoration: none;
+        font-family: MullerExtraBold;
+        border: 0;
+        -moz-transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        writing-mode: tb-rl;
+        font-size: 18px;
+    }
+
+        .button_open_menu_info:hover, .button_open_menu:hover {
+            opacity: 1;
+            text-decoration: none;
+            border: 0;
+        }
+
+    .button_open_menu_info {
+        left: -2.1em;
+        top: 20.1em;
+    }
+
+    .close_but_menu {
+        font-size: 25px;
+        top: 50px;
+        padding: 10px 20px;
+        right: 30px;
+    }
+
+}
+
+@media (min-width:440px) {
+    .button_open_menu_info, .button_open_menu {
+        top: 27.35em;
+    }
+    }
+@media (min-width:770px) {
+    .button_open_menu_info, .button_open_menu {
+        top: 21.1em;
+    }
+}
+
+
+    @media (min-width:780px) {
+        .button_open_menu, .button_open_menu_info {
+            display: none;
+        }
+
+        .vert_menu {
+            position: relative;
+            width: 190px;
+            margin-left: 0em;
+        }
+
+        .vis_menu {
+            display: initial;
+        }
+
+        .vert_menu li {
+            margin-left: -3.3em;
+        }
+
+        .close_but_menu, #myMenuInfo, #myMenuProduct {
+            display: none;
+        }
+
+        .vert_menu {
+            margin-left: 0.8em;
+            width: 190px;
+        }
+
+            .vert_menu h2 {
+                font-size: 18px;
+            }
+
+            .vert_menu li {
+                font-size: 12px;
+                margin-left: -3.3em;
+            }
+    }
+
+    @media (min-width:992px) {
+        .vert_menu {
+            width: 250px;
+            margin-left: 0px;
+        }
+
+            .vert_menu li {
+                margin-left: -2.85em;
+            }
+
+        .vert_menu {
+            width: 250px;
+            margin-left: 2em;
+        }
+
+            .vert_menu h2 {
+                font-size: 21px;
+            }
+
+            .vert_menu li {
+                font-size: 14px;
+                margin-left: -2.85em;
+            }
+    }
+
+    /*Сообщения*/
+#ModalInfo p {
+    font-size: 18px;
+    font-family: MullerRegular;
+    color: #ffffff;
+}
+.mess_but {
+    border:0; background-color:#f16d6e;
+}
+
+.table_mess {
+    margin: 0 auto;
+    display: table;
+}
+
+    .table_mess .table_tr {
+        display: table-row;
+    }
+
+    .table_mess .table_td:first-child {
+        color: #fff;
+        padding-right: 2em;
+        font-family: MullerRegular;
+        font-size: 18px;
+        text-align: right;
+    }
+
+    .table_mess .table_tr:last-child td:first-child {
+        vertical-align: top;
+    }
+
+.modal-content-menu {
+    width: 100%;
+    height: 100%;
+    background-color: #bd3538;
+    border: 1px solid #999999;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    outline: none;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+    background-clip: padding-box;
+}
+
+.modal-content-menu {
+    width: 100%;
+    height: 100%;
+    background-color: #bd3538;
+    border: 1px solid #999999;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    outline: none;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+    background-clip: padding-box;
+}
+
+#myMenuModal .modal-content-menu {
+    opacity: 0.95;
+}
+
+.menu_buttom {
+    border: 0.1em solid #fff !important;
+    font-family: MullerRegular;
+    font-size: 16px;
+    color: #fff;
+    padding: 5px;
+}
+
+    .menu_buttom:hover {
+        color: #333;
+    }
+
+.close_but_menu, .close_but {
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1;
+    color: #ffffff;
+    text-shadow: 0 1px 0 #ffffff;
+    opacity: 0.9;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #ae3135;
+    background: linear-gradient(to top, #9b2d30, #c8373b);
+    border-radius: 6px;
+}
+
+@media (min-width:320px) {
+    .ftxt {
+        width: 250px !important;
+    }
+    .table_mess .table_td {
+        display: block;
+    }
+}
+
+@media (min-width:490px) {
+    .table_mess .table_td {
+        display: table-cell;
+    }
+    .ftxt {
+        width: 300px !important;
+    }
+}
+
+.page404 {
+    font-family: MullerRegular;
+    text-align: center;
+}
+
+    .page404 h2 {
+        font-family:MullerBold;
+        font-size:24px;
+        
+    }
+
+    .page404 h1 {
+        font-family: MullerBold;
+        font-size: 100px;
+        
+        color:#3a385e;
+    }
+
+    .page404 p {
+        text-align:center;
+        color:#ee7f80;
+        font-size:20px;
+    }
+
+    .page404  h3 a {
+        text-decoration: none;
+        color: #3a385e;
+        font-size: 20px;
+        font-family:MullerExtraBold;
+    }

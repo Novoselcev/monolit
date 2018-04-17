@@ -1,0 +1,26 @@
+﻿@model Monolit.Models.Messager
+@{
+    Layout = null;
+}
+<!-- Заголовок модального окна -->
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h4 class="modal-title">Оставьте заявку на консультацию</h4>
+</div>
+<!-- Основное содержимое модального окна -->
+<div class="modal-body">
+    <div class="table_mess">
+        <div class="table_tr"><div class="table_td">Ваше имя</div><div class="table_td"><input type="text" name="UserName" id="UserName" class="ftxt" /></div></div>
+        <div class="table_tr"><div class="table_td">Телефон</div><div class="table_td"><input type="text" name="Phone" id="Phone" class="ftxt" /></div></div>
+        <div class="table_tr"><div class="table_td">Email</div><div class="table_td"><input type="text" name="EmailAdrress" id="EmailAdrress" class="ftxt" /></div></div>
+        <div class="table_tr"><div class="table_td">Сообщение</div> <div class="table_td"><textarea rows="5" id="Message" name="Message" class="ftxt"></textarea></div></div>
+    </div>
+
+
+
+</div>
+<!-- Футер модального окна -->
+<div class="modal-footer">
+    <button type="button" id="close_myModal" class="btn btn-primary mess_but" data-dismiss="modal" >Закрыть</button>
+    <button id="SentMes" type="submit" class="btn btn-primary mess_but" >Отправить</button>
+</div>

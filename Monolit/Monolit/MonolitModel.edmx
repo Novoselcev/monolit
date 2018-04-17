@@ -1,0 +1,470 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище u7716449_monolitModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CategoryProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Descript" Type="nvarchar(max)" />
+          <Property Name="Position" Type="int" Nullable="false" />
+          <Property Name="Visible" Type="bit" Nullable="false" />
+          <Property Name="level" Type="int" />
+          <Property Name="ParentId" Type="int" />
+          <Property Name="UrlImage" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ContexMenuCross">
+          <Key>
+            <PropertyRef Name="ContextID" />
+            <PropertyRef Name="MenuID" />
+          </Key>
+          <Property Name="ContextID" Type="int" Nullable="false" />
+          <Property Name="MenuID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ContextPage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Context" Type="nvarchar(max)" />
+          <Property Name="Header" Type="nvarchar(max)" />
+          <Property Name="Title" Type="nvarchar(max)" />
+          <Property Name="Keywords" Type="nvarchar(max)" />
+          <Property Name="UrlDescriptImg" Type="nvarchar(max)" />
+          <Property Name="SmallDescript" Type="nvarchar(max)" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Descript" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="MenuSite">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LevelMenu" Type="int" Nullable="false" />
+          <Property Name="ParentMenu" Type="int" />
+          <Property Name="Position" Type="int" />
+          <Property Name="Context" Type="int" />
+          <Property Name="Template" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Visible" Type="bit" Nullable="false" />
+          <Property Name="URL" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PriceContentCross">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="ContextID" Type="int" Nullable="false" />
+          <Property Name="CategoryPriceID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IE" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Currensy" Type="nchar" MaxLength="10" />
+          <Property Name="UrlImage" Type="nvarchar(max)" />
+          <Property Name="Position" Type="int" Nullable="false" />
+          <Property Name="Visible" Type="bit" Nullable="false" />
+          <Property Name="Descript" Type="nvarchar(max)" />
+          <Property Name="Price2" Type="numeric" Precision="18" Scale="2" />
+          <Property Name="Currency" Type="nchar" MaxLength="10" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Template">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Route" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK__ContexMen__Conte__22AA2996">
+          <End Role="ContextPage" Type="Self.ContextPage" Multiplicity="1" />
+          <End Role="ContexMenuCross" Type="Self.ContexMenuCross" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContextPage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContexMenuCross">
+              <PropertyRef Name="ContextID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ContexMen__MenuI__239E4DCF">
+          <End Role="MenuSite" Type="Self.MenuSite" Multiplicity="1" />
+          <End Role="ContexMenuCross" Type="Self.ContexMenuCross" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MenuSite">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ContexMenuCross">
+              <PropertyRef Name="MenuID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PriceCont__Categ__52593CB8">
+          <End Role="CategoryProduct" Type="Self.CategoryProduct" Multiplicity="1" />
+          <End Role="PriceContentCross" Type="Self.PriceContentCross" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoryProduct">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PriceContentCross">
+              <PropertyRef Name="CategoryPriceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PriceCont__Conte__5165187F">
+          <End Role="ContextPage" Type="Self.ContextPage" Multiplicity="1" />
+          <End Role="PriceContentCross" Type="Self.PriceContentCross" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContextPage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PriceContentCross">
+              <PropertyRef Name="ContextID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__Categor__4D94879B">
+          <End Role="CategoryProduct" Type="Self.CategoryProduct" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoryProduct">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище u7716449_monolitModelContainer">
+          <EntitySet Name="CategoryProduct" EntityType="Self.CategoryProduct" Schema="u7716449_monolit" store:Type="Tables" />
+          <EntitySet Name="ContexMenuCross" EntityType="Self.ContexMenuCross" Schema="u7716449_monolit" store:Type="Tables" />
+          <EntitySet Name="ContextPage" EntityType="Self.ContextPage" Schema="u7716449_monolit" store:Type="Tables" />
+          <EntitySet Name="MenuSite" EntityType="Self.MenuSite" Schema="u7716449_monolit" store:Type="Tables" />
+          <EntitySet Name="PriceContentCross" EntityType="Self.PriceContentCross" Schema="u7716449_monolit" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="u7716449_monolit" store:Type="Tables" />
+          <EntitySet Name="Template" EntityType="Self.Template" Schema="u7716449_monolit" store:Type="Tables" />
+          <AssociationSet Name="FK__ContexMen__Conte__22AA2996" Association="Self.FK__ContexMen__Conte__22AA2996">
+            <End Role="ContextPage" EntitySet="ContextPage" />
+            <End Role="ContexMenuCross" EntitySet="ContexMenuCross" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ContexMen__MenuI__239E4DCF" Association="Self.FK__ContexMen__MenuI__239E4DCF">
+            <End Role="MenuSite" EntitySet="MenuSite" />
+            <End Role="ContexMenuCross" EntitySet="ContexMenuCross" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PriceCont__Categ__52593CB8" Association="Self.FK__PriceCont__Categ__52593CB8">
+            <End Role="CategoryProduct" EntitySet="CategoryProduct" />
+            <End Role="PriceContentCross" EntitySet="PriceContentCross" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PriceCont__Conte__5165187F" Association="Self.FK__PriceCont__Conte__5165187F">
+            <End Role="ContextPage" EntitySet="ContextPage" />
+            <End Role="PriceContentCross" EntitySet="PriceContentCross" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__Categor__4D94879B" Association="Self.FK__Product__Categor__4D94879B">
+            <End Role="CategoryProduct" EntitySet="CategoryProduct" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="u7716449_monolitModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="MenuSite">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LevelMenu" Type="Int32" Nullable="false" />
+          <Property Name="ParentMenu" Type="Int32" />
+          <Property Name="Position" Type="Int32" />
+          <Property Name="Context" Type="Int32" />
+          <Property Name="Template" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Template1" Relationship="u7716449_monolitModel.FK__MenuSite__Templa__182C9B23" FromRole="MenuSite" ToRole="Template" />
+          <Property Name="Visible" Type="Boolean" Nullable="false" />
+          <Property Name="URL" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ContextPage" Relationship="u7716449_monolitModel.ContexMenuCross" FromRole="MenuSite" ToRole="ContextPage" />
+        </EntityType>
+        <EntityType Name="Template">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Route" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="MenuSite" Relationship="u7716449_monolitModel.FK__MenuSite__Templa__182C9B23" FromRole="Template" ToRole="MenuSite" />
+        </EntityType>
+        <EntityContainer Name="u7716449_monolitEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MenuSite" EntityType="Self.MenuSite" />
+          <EntitySet Name="Template" EntityType="Self.Template" />
+          <AssociationSet Name="FK__MenuSite__Templa__182C9B23" Association="u7716449_monolitModel.FK__MenuSite__Templa__182C9B23">
+            <End Role="Template" EntitySet="Template" />
+            <End Role="MenuSite" EntitySet="MenuSite" />
+          </AssociationSet>
+          <EntitySet Name="ContextPage" EntityType="u7716449_monolitModel.ContextPage" />
+          <AssociationSet Name="ContexMenuCross" Association="u7716449_monolitModel.ContexMenuCross">
+            <End Role="ContextPage" EntitySet="ContextPage" />
+            <End Role="MenuSite" EntitySet="MenuSite" />
+          </AssociationSet>
+          <EntitySet Name="CategoryProducts" EntityType="u7716449_monolitModel.CategoryProduct" />
+          <EntitySet Name="PriceContentCrosses" EntityType="u7716449_monolitModel.PriceContentCross" />
+          <EntitySet Name="Products" EntityType="u7716449_monolitModel.Product" />
+          <AssociationSet Name="FK__PriceCont__Categ__52593CB8" Association="u7716449_monolitModel.FK__PriceCont__Categ__52593CB8">
+            <End Role="CategoryProduct" EntitySet="CategoryProducts" />
+            <End Role="PriceContentCross" EntitySet="PriceContentCrosses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__Categor__4D94879B" Association="u7716449_monolitModel.FK__Product__Categor__4D94879B">
+            <End Role="CategoryProduct" EntitySet="CategoryProducts" />
+            <End Role="Product" EntitySet="Products" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PriceCont__Conte__5165187F" Association="u7716449_monolitModel.FK__PriceCont__Conte__5165187F">
+            <End Role="ContextPage" EntitySet="ContextPage" />
+            <End Role="PriceContentCross" EntitySet="PriceContentCrosses" />
+          </AssociationSet>
+        </EntityContainer>
+        <Association Name="FK__MenuSite__Templa__182C9B23">
+          <End Type="u7716449_monolitModel.Template" Role="Template" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="u7716449_monolitModel.MenuSite" Role="MenuSite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Template">
+              <PropertyRef Name="Name" />
+            </Principal>
+            <Dependent Role="MenuSite">
+              <PropertyRef Name="Template" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ContextPage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Context" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Header" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UrlDescriptImg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SmallDescript" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="MenuSite" Relationship="u7716449_monolitModel.ContexMenuCross" FromRole="ContextPage" ToRole="MenuSite" />
+          <Property Name="Descript" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PriceContentCrosses" Relationship="u7716449_monolitModel.FK__PriceCont__Conte__5165187F" FromRole="ContextPage" ToRole="PriceContentCross" />
+        </EntityType>
+        <Association Name="ContexMenuCross">
+          <End Type="u7716449_monolitModel.ContextPage" Role="ContextPage" Multiplicity="*" />
+          <End Type="u7716449_monolitModel.MenuSite" Role="MenuSite" Multiplicity="*" />
+        </Association>
+        <EntityType Name="CategoryProduct">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Descript" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="Int32" Nullable="false" />
+          <Property Name="Visible" Type="Boolean" Nullable="false" />
+          <Property Name="level" Type="Int32" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="UrlImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="PriceContentCrosses" Relationship="u7716449_monolitModel.FK__PriceCont__Categ__52593CB8" FromRole="CategoryProduct" ToRole="PriceContentCross" />
+          <NavigationProperty Name="Products" Relationship="u7716449_monolitModel.FK__Product__Categor__4D94879B" FromRole="CategoryProduct" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="PriceContentCross">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="ContextID" Type="Int32" Nullable="false" />
+          <Property Name="CategoryPriceID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CategoryProduct" Relationship="u7716449_monolitModel.FK__PriceCont__Categ__52593CB8" FromRole="PriceContentCross" ToRole="CategoryProduct" />
+          <NavigationProperty Name="ContextPage" Relationship="u7716449_monolitModel.FK__PriceCont__Conte__5165187F" FromRole="PriceContentCross" ToRole="ContextPage" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Currensy" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="UrlImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="Int32" Nullable="false" />
+          <Property Name="Visible" Type="Boolean" Nullable="false" />
+          <Property Name="Descript" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Price2" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Currency" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="CategoryId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CategoryProduct" Relationship="u7716449_monolitModel.FK__Product__Categor__4D94879B" FromRole="Product" ToRole="CategoryProduct" />
+        </EntityType>
+        <Association Name="FK__PriceCont__Categ__52593CB8">
+          <End Type="u7716449_monolitModel.CategoryProduct" Role="CategoryProduct" Multiplicity="1" />
+          <End Type="u7716449_monolitModel.PriceContentCross" Role="PriceContentCross" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoryProduct">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PriceContentCross">
+              <PropertyRef Name="CategoryPriceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__Categor__4D94879B">
+          <End Type="u7716449_monolitModel.CategoryProduct" Role="CategoryProduct" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="u7716449_monolitModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoryProduct">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PriceCont__Conte__5165187F">
+          <End Type="u7716449_monolitModel.ContextPage" Role="ContextPage" Multiplicity="1" />
+          <End Type="u7716449_monolitModel.PriceContentCross" Role="PriceContentCross" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ContextPage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PriceContentCross">
+              <PropertyRef Name="ContextID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище u7716449_monolitModelContainer" CdmEntityContainer="u7716449_monolitEntities">
+          <EntitySetMapping Name="MenuSite">
+            <EntityTypeMapping TypeName="u7716449_monolitModel.MenuSite">
+              <MappingFragment StoreEntitySet="MenuSite">
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="Visible" ColumnName="Visible" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LevelMenu" ColumnName="LevelMenu" />
+                <ScalarProperty Name="ParentMenu" ColumnName="ParentMenu" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Context" ColumnName="Context" />
+                <ScalarProperty Name="Template" ColumnName="Template" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Template">
+            <EntityTypeMapping TypeName="u7716449_monolitModel.Template">
+              <MappingFragment StoreEntitySet="Template">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Route" ColumnName="Route" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ContextPage">
+            <EntityTypeMapping TypeName="u7716449_monolitModel.ContextPage">
+              <MappingFragment StoreEntitySet="ContextPage">
+                <ScalarProperty Name="Descript" ColumnName="Descript" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="SmallDescript" ColumnName="SmallDescript" />
+                <ScalarProperty Name="UrlDescriptImg" ColumnName="UrlDescriptImg" />
+                <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="Context" ColumnName="Context" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="ContexMenuCross" TypeName="u7716449_monolitModel.ContexMenuCross" StoreEntitySet="ContexMenuCross">
+            <EndProperty Name="MenuSite">
+              <ScalarProperty Name="Id" ColumnName="MenuID" />
+            </EndProperty>
+            <EndProperty Name="ContextPage">
+              <ScalarProperty Name="Id" ColumnName="ContextID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="CategoryProducts">
+            <EntityTypeMapping TypeName="u7716449_monolitModel.CategoryProduct">
+              <MappingFragment StoreEntitySet="CategoryProduct">
+                <ScalarProperty Name="UrlImage" ColumnName="UrlImage" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="level" ColumnName="level" />
+                <ScalarProperty Name="Visible" ColumnName="Visible" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Descript" ColumnName="Descript" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PriceContentCrosses">
+            <EntityTypeMapping TypeName="u7716449_monolitModel.PriceContentCross">
+              <MappingFragment StoreEntitySet="PriceContentCross">
+                <ScalarProperty Name="CategoryPriceID" ColumnName="CategoryPriceID" />
+                <ScalarProperty Name="ContextID" ColumnName="ContextID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="u7716449_monolitModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Price2" ColumnName="Price2" />
+                <ScalarProperty Name="Descript" ColumnName="Descript" />
+                <ScalarProperty Name="Visible" ColumnName="Visible" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="UrlImage" ColumnName="UrlImage" />
+                <ScalarProperty Name="Currensy" ColumnName="Currensy" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="IE" ColumnName="IE" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="@ViewBag.KeyWord" />
+    <meta name="description" content="@ViewBag.Description" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="all" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Cache-Control" content="public">
+    <meta http-equiv="Cache-Control" content="max-age=994700, must-revalidate">
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="top-block">
+        <div class="container ">
+            <div class="row">
+                <div class="col-xs-12 col-sm-4 col-md-4">
+                    <div class="logo40">
+                        <img src="~/Content/template/logo.png" />
+                        <div class="des-logo">
+                            <span id="Name_Company">МОНОЛИТ40</span>
+                            <span id="Des_Company">Строительная бригада</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-8 col-md-8">
+                    <div class="top-contact">
+                        <div class="top-con">
+                            <span id="top-email">monolit40@bk.ru</span>
+                            <span id="top-phone">+7 953 316 6343</span>
+                        </div>
+                        <a href="#myModal" data-toggle="modal" class="btn btn-primary  top_but">
+                            Обратная связь
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navbar navbar-inverse  set_menu">
+        <div class="container ">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                @{ Html.RenderAction("TopMenu", "Home"); }
+            </div>
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+
+        <footer>
+            <div class="footer-block">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-4 col-md-4">
+                            <div class="logo40">
+                                <img src="~/Content/template/logo.png" />
+                                <div class="des-logo">
+                                    <span id="Name_Company">МОНОЛИТ40</span>
+                                    <span id="Des_Company">Строительная бригада</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 col-md-4">
+                            <div class="footer-contact">
+                                <span>Телефон: +7 953 316 6343</span>
+                                <span>Email: monolit40@bk.ru</span>
+                            </div>
+                        </div>
+                        <div class=" col-sm-4 col-md-4">
+                            <a href="#myModal" data-toggle="modal" class="btn btn-primary  footer_but">
+                                Обратная связь
+                            </a>
+                            <p>&copy; @DateTime.Now.Year – приложение ENGANT ASP.NET</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </footer>
+    </div>
+    @Html.Partial("CallBack")
+    @Html.Partial("ModalInfo")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
