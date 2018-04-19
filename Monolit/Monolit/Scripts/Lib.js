@@ -35,7 +35,7 @@ $(document).ready(function () {
 
     $("#prodMenu").click(function () {
         if (check) {
-            $("#prodMenu").animate({ left: 101 }, 500);
+            $("#prodMenu").animate({ left: 155 }, 500);
             $(".vert_menu").animate({ left: 305 }, 450);
             $(".contentM").animate({ "margin-left": "200px" }, 500);
             $('body,html').animate({ scrollTop: 0 }, 400);
@@ -43,10 +43,26 @@ $(document).ready(function () {
         }
         else {
             $(".vert_menu").animate({ left: 0 }, 500);
-            $("#prodMenu").animate({ left: "-5.55em" }, 450);
+            $("#prodMenu").animate({ left: "-4.7em" }, 450);
             $(".contentM").animate({ "margin-left": "0px" }, 500);
             check = true;
         }
+    });
+
+        $("#prodMenu2").click(function () {
+            if (check) {
+                $("#prodMenu2").animate({ left: 130 }, 500);
+                $(".vert_menu").animate({ left: 305 }, 450);
+                $(".contentM").animate({ "margin-left": "200px" }, 500);
+                $('body,html').animate({ scrollTop: 0 }, 400);
+                check = false;
+            }
+            else {
+                $(".vert_menu").animate({ left: 0 }, 500);
+                $("#prodMenu2").animate({ left: "-6.7em" }, 450);
+                $(".contentM").animate({ "margin-left": "0px" }, 500);
+                check = true;
+            }
         /* }, function () {
              $(".vert_menu").animate({ left: 0 }, 500);*/
     });

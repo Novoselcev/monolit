@@ -32,8 +32,8 @@ namespace Monolit
                               defaults: new { controller = "Home", action = "InfoContext", id = UrlParameter.Optional });
 
             routes.MapRoute(name: "InfoArticle",
-                              url: "InfoArticle/{id}",
-                              defaults: new { controller = "Home", action = "InfoArticle", id = UrlParameter.Optional });
+                              url: "Information/{id}",
+                              defaults: new { controller = "Home", action = "InfoPage", id = UrlParameter.Optional });
 
 
             routes.MapRoute(

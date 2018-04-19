@@ -171,6 +171,7 @@
       <DependentUpon>MonolitModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ContactFull.cs" />
+    <Compile Include="Models\InfoArticle.cs" />
     <Compile Include="Models\PriceProduct.cs" />
     <Compile Include="MonolitModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -319,6 +320,10 @@
     <Content Include="Views\Home\MessageSent.cshtml" />
     <Content Include="Views\Shared\ModalInfo.cshtml" />
     <Content Include="Views\Shared\NotFound.cshtml" />
+    <Content Include="Views\Shared\_LayoutInfo.cshtml" />
+    <Content Include="Views\Home\MenuInfo.cshtml" />
+    <Content Include="Views\Home\InfoContext.cshtml" />
+    <Content Include="Views\Home\InfoPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

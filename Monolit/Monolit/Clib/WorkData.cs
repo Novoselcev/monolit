@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Monolit;
+using Monolit.Models;
 
 namespace Monolit.Clib
 {
@@ -29,7 +30,8 @@ namespace Monolit.Clib
             var content = db.MenuSite.FirstOrDefault(x => x.URL == url);
             if (content != null)
             {
-                content = SearchId(content);
+                if (content.ContextPage.Count()==0 )  content = SearchId(content);
+
                 if (content.ContextPage.Count() > 0)
                 {
                 result = content.ContextPage.First().Context;
@@ -39,21 +41,40 @@ namespace Monolit.Clib
                         string shablon= _tp.GetTablePrice(content.ContextPage.First().Id, true);
                         result = result.Replace("@ShablonPrice", shablon);
                     }
+                    else if (result.LastIndexOf("@ShablonInfo") != -1)
+                    {
+                        TemplateHelper _tp = new TemplateHelper();
+                        string shablon = _tp.GetInfoTable();
+                        result = result.Replace("@ShablonInfo", shablon);
+                    }
 
-                Title = content.ContextPage.First().Title;
+                    Title = content.ContextPage.First().Title;
                 KeyWords = content.ContextPage.First().Keywords;
                 Description = content.ContextPage.First().Descript;
                 Layout = content.Template1.Route;
                 }
-                /* if (content.Header == "Цена")
-                 {
-                     TemplateProduct tp = new TemplateProduct();
-                     string price = tp.GetPrice();
-                     result = result.Replace("@ShablonPrice", price);
-                 };*/
+
             }
             return result;
         }
+
+        //получения списка статей
+        public List<InfoArticle> Get_spis_article_info(Int32 id)
+        {
+            db = new Monolit.u7716449_monolitEntities();
+            var page = db.MenuSite.FirstOrDefault(x => x.Id == id);
+                if (page!=null)  Description = page.Name;
+            List<InfoArticle> spis = db.MenuSite.Where(x => x.Visible && x.ParentMenu == id).Select(o => new InfoArticle
+            {
+                date = (DateTime)o.ContextPage.FirstOrDefault().Date,
+                URL = o.URL,
+                Url_Image = o.ContextPage.FirstOrDefault().UrlDescriptImg,
+                Description = o.ContextPage.FirstOrDefault().SmallDescript.Length > 150 ? o.ContextPage.FirstOrDefault().SmallDescript.Substring(0, 150) : o.ContextPage.FirstOrDefault().SmallDescript,
+                Header = o.ContextPage.FirstOrDefault().Header
+            }).ToList();
+            return spis;
+        }
+
 
         private MenuSite SearchId(MenuSite c)
         {
@@ -62,8 +83,11 @@ namespace Monolit.Clib
             if (db.MenuSite.Count(x => x.ParentMenu == c.Id && x.Visible) > 0)
             {
                 MenuSite temp = db.MenuSite.First(x => x.ParentMenu == c.Id && x.Visible);
-                context = SearchId(temp);
-
+                if (temp.ContextPage.Count() == 0)
+                    context = SearchId(temp);
+                else {
+                    context = temp;
+                }
             }
             else {
                 context = c;

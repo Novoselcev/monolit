@@ -51,6 +51,49 @@ namespace Monolit.Clib
 
             return rezult;
         }
+        /*Загрузка спеска полезных статей*/
+        public string GetInfoTable()
+        {
+            string rezult = "";
+            db = new Monolit.u7716449_monolitEntities();
+            List<InfoArticle> spis = db.MenuSite.Where(x => x.Visible && x.LevelMenu==3 && x.Template=="Информация").Select(o => new InfoArticle
+            {
+                date = (DateTime)o.ContextPage.FirstOrDefault().Date,
+                URL = o.URL,
+                Url_Image = o.ContextPage.FirstOrDefault().UrlDescriptImg,
+                Description = o.ContextPage.FirstOrDefault().SmallDescript.Length > 150 ? o.ContextPage.FirstOrDefault().SmallDescript.Substring(0, 150) : o.ContextPage.FirstOrDefault().SmallDescript,
+                Header = o.ContextPage.FirstOrDefault().Header
+            }).OrderBy(x=>x.date).ToList();
+            //Генерация полного списка статей
+            TagBuilder tag = new TagBuilder("table");
+            tag.AddCssClass("tab_art");
+            foreach (var st in spis)
+            {
+                tag.InnerHtml += "<tr><td rowspan=\"2\"  valign=\"top\"  style=\"padding: 3px 10px; \"><img src=" + st.Url_Image + " /></td>";
+                tag.InnerHtml += "<td><span style=\"color:#D76366;margin: 0 10px 0 0;font-size:18px;\">" + st.date.ToShortDateString() + "</span><span style=\"color:#1f1e1e;font-size:18px;font-weight:600;\">"+st.Header+ "</span>  </td></tr> ";
+                tag.InnerHtml += "<tr style =\" border-bottom:1px solid #d6d0d0;\"><td style=\"padding-bottom:1em; \">" + st.Description+ "...<a href=\"/Information/" + st.URL+"\">Подробнее</a></td></tr>";
+            }
+            rezult = tag.ToString();
+            return rezult;
+        }
+
+        /*
+         <tr>
+                    <td rowspan="2" valign="top" ; style="padding:3px 10px;"><img src="@item.Url_Image" /></td>
+                    <td>
+                        <span style="color:#D76366;margin: 0 10px 0 0;font-size:18px;">@item.date.ToShortDateString()</span>
+                        <span style="color:#1f1e1e;font-size:18px;font-weight:600;">@item.Header</span>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-bottom:1em;">
+                        @item.Description...
+                    @Html.RouteLink("Подробнее", new { controller = "Home", action = "InfoPage", id = item.URL })
+                </td>
+            </tr>
+             */
+
 
 
         private void SearchProduct(int parrentId)

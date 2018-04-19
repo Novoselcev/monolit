@@ -59,6 +59,14 @@ namespace Monolit.Controllers
             return View(prodmenu);
         }
 
+
+        public ActionResult MenuInfo (int subcategory = 0)
+        {
+            WorkData wd = new WorkData();
+            List<Monolit.MenuSite> prodmenu = wd.GetTopMenu("Полезная информация");
+            return View(prodmenu);
+        }
+
         public ActionResult ProdContext(string id = "")
         {
             WorkData wd = new WorkData();
@@ -73,6 +81,32 @@ namespace Monolit.Controllers
                 return View();
             else return HttpNotFound();
 
+        }
+
+        public ActionResult InfoPage(string id = "")
+        {
+            WorkData wd = new WorkData();
+            string zapros = wd.GetContent(id);
+            ViewBag.Context = MvcHtmlString.Create(zapros);
+            ViewBag.Title = wd.Title;
+            ViewBag.KeyWord = wd.KeyWords;
+            ViewBag.Description = wd.Description;
+            ViewBag.UrlA = id;
+            ViewBag.Layout = wd.Layout;
+            if (zapros != "")
+                return View();
+            else return HttpNotFound();
+
+        }
+
+        public ActionResult InfoContext(Int32 id =0)
+        {
+            WorkData wd = new WorkData();
+            List<InfoArticle> spis = wd.Get_spis_article_info(id);
+            ViewBag.Title = "Раздел про " + wd.Description.ToLower();
+            ViewBag.KeyWord = "Раздел про " + wd.Description.ToLower();
+            ViewBag.Description = "Раздел про " + wd.Description.ToLower();
+            return View(spis);
         }
 
         public ActionResult MessageSent()
