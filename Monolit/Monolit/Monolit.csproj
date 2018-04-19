@@ -158,6 +158,7 @@
     </Compile>
     <Compile Include="Clib\CheckField.cs" />
     <Compile Include="Clib\EmailMes.cs" />
+    <Compile Include="Clib\TemplateHelper.cs" />
     <Compile Include="Clib\WorkData.cs" />
     <Compile Include="ContextPage.cs">
       <DependentUpon>MonolitModel.tt</DependentUpon>
@@ -170,6 +171,7 @@
       <DependentUpon>MonolitModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\ContactFull.cs" />
+    <Compile Include="Models\PriceProduct.cs" />
     <Compile Include="MonolitModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -253,6 +255,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <EntityDeploy Include="MonolitModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -280,6 +283,7 @@
     <Content Include="fonts\Fontfabric - MullerThinItalic.otf" />
     <Content Include="fonts\Fontfabric - MullerUltraLight.otf" />
     <Content Include="fonts\Fontfabric - MullerUltraLightItalic.otf" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

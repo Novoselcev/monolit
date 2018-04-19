@@ -33,6 +33,13 @@ namespace Monolit.Clib
                 if (content.ContextPage.Count() > 0)
                 {
                 result = content.ContextPage.First().Context;
+                    if (result.LastIndexOf("@ShablonPrice") != -1)
+                    {
+                        TemplateHelper _tp = new TemplateHelper();
+                        string shablon= _tp.GetTablePrice(content.ContextPage.First().Id, true);
+                        result = result.Replace("@ShablonPrice", shablon);
+                    }
+
                 Title = content.ContextPage.First().Title;
                 KeyWords = content.ContextPage.First().Keywords;
                 Description = content.ContextPage.First().Descript;

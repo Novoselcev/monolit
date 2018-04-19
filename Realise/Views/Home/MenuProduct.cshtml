@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Monolit.MenuSite>
+@{
+    Layout = null;
+    string act = "";
+    if (ViewContext.RouteData.Values["id"] != null)
+    {
+        act = ViewContext.RouteData.Values["id"].ToString();
+    }
+}
+
+<div class="menu-email vert_menu">
+    <h2>Наши<br> услуги</h2>
+    <ul>
+        @foreach (var link in Model)
+        {
+
+            <li @(act == link.URL ? "class=selected" : "")> @Html.RouteLink(link.Name, new { controller = "Home", action = "ProdContext", id = link.URL })</li>
+        }
+    </ul>
+</div>

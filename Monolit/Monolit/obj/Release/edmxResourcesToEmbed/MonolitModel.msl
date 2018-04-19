@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище u7716449_monolitModelContainer" CdmEntityContainer="u7716449_monolitEntities">
+    <EntitySetMapping Name="MenuSite">
+      <EntityTypeMapping TypeName="u7716449_monolitModel.MenuSite">
+        <MappingFragment StoreEntitySet="MenuSite">
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="Visible" ColumnName="Visible" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LevelMenu" ColumnName="LevelMenu" />
+          <ScalarProperty Name="ParentMenu" ColumnName="ParentMenu" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Context" ColumnName="Context" />
+          <ScalarProperty Name="Template" ColumnName="Template" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Template">
+      <EntityTypeMapping TypeName="u7716449_monolitModel.Template">
+        <MappingFragment StoreEntitySet="Template">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Route" ColumnName="Route" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContextPage">
+      <EntityTypeMapping TypeName="u7716449_monolitModel.ContextPage">
+        <MappingFragment StoreEntitySet="ContextPage">
+          <ScalarProperty Name="Descript" ColumnName="Descript" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="SmallDescript" ColumnName="SmallDescript" />
+          <ScalarProperty Name="UrlDescriptImg" ColumnName="UrlDescriptImg" />
+          <ScalarProperty Name="Keywords" ColumnName="Keywords" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Header" ColumnName="Header" />
+          <ScalarProperty Name="Context" ColumnName="Context" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ContexMenuCross" TypeName="u7716449_monolitModel.ContexMenuCross" StoreEntitySet="ContexMenuCross">
+      <EndProperty Name="MenuSite">
+        <ScalarProperty Name="Id" ColumnName="MenuID" />
+      </EndProperty>
+      <EndProperty Name="ContextPage">
+        <ScalarProperty Name="Id" ColumnName="ContextID" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="CategoryProducts">
+      <EntityTypeMapping TypeName="u7716449_monolitModel.CategoryProduct">
+        <MappingFragment StoreEntitySet="CategoryProduct">
+          <ScalarProperty Name="UrlImage" ColumnName="UrlImage" />
+          <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+          <ScalarProperty Name="level" ColumnName="level" />
+          <ScalarProperty Name="Visible" ColumnName="Visible" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="Descript" ColumnName="Descript" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PriceContentCrosses">
+      <EntityTypeMapping TypeName="u7716449_monolitModel.PriceContentCross">
+        <MappingFragment StoreEntitySet="PriceContentCross">
+          <ScalarProperty Name="CategoryPriceID" ColumnName="CategoryPriceID" />
+          <ScalarProperty Name="ContextID" ColumnName="ContextID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="u7716449_monolitModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="Currency" ColumnName="Currency" />
+          <ScalarProperty Name="Price2" ColumnName="Price2" />
+          <ScalarProperty Name="Descript" ColumnName="Descript" />
+          <ScalarProperty Name="Visible" ColumnName="Visible" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="UrlImage" ColumnName="UrlImage" />
+          <ScalarProperty Name="Currensy" ColumnName="Currensy" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="IE" ColumnName="IE" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

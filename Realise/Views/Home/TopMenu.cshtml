@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Monolit.MenuSite>
+@{
+    Layout = null;
+    string st = ViewContext.RouteData.Values["action"].ToString();
+    string actM = "";
+    if (ViewContext.RouteData.Values["id"] != null)
+    {
+        actM = ViewContext.RouteData.Values["id"].ToString();
+    }
+
+}
+
+<ul class="nav navbar-nav">
+    @foreach (var link in Model)
+    {
+
+        <li @(actM == link.URL ? "class=active" : "")>
+   
+                @Html.RouteLink(link.Name, new { controller = "Home", action = "TopMenuContext", id = link.URL })
+
+        </li>
+    }
+</ul>

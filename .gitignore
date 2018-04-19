@@ -1,0 +1,5 @@
+#Ignore config
+*.config
+/Magistral40/Web.Debug.config
+/Magistral40/Web.Release.config
+/Magistral40/Web.config
