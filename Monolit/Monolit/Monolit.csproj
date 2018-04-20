@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Monolit</RootNamespace>
     <AssemblyName>Monolit</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
@@ -26,6 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -61,6 +62,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -68,11 +70,8 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
@@ -114,6 +113,7 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -203,9 +203,43 @@
     <Content Include="Content\animate.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\Info\armirovanie.jpg" />
+    <Content Include="Content\images\Info\bassein.jpg" />
+    <Content Include="Content\images\Info\bassein2.jpg" />
+    <Content Include="Content\images\Info\block-keramo.jpg" />
+    <Content Include="Content\images\Info\block-keramo2.jpg" />
     <Content Include="Content\images\Info\block.jpg" />
+    <Content Include="Content\images\Info\dom1.jpg" />
+    <Content Include="Content\images\Info\dom2.jpg" />
+    <Content Include="Content\images\Info\dom3.jpg" />
+    <Content Include="Content\images\Info\fundament3.jpg" />
+    <Content Include="Content\images\Info\gazobeton.jpg" />
+    <Content Include="Content\images\Info\krovlya.jpg" />
+    <Content Include="Content\images\Info\krovlya1.jpg" />
+    <Content Include="Content\images\Info\krovlya2.jpg" />
+    <Content Include="Content\images\Info\krovlya4.jpg" />
+    <Content Include="Content\images\Info\krovlya5.jpg" />
     <Content Include="Content\images\Info\lenta.jpg" />
+    <Content Include="Content\images\Info\lenta_stat.jpg" />
+    <Content Include="Content\images\Info\lenta_stat2.jpg" />
+    <Content Include="Content\images\Info\lent_fundament.jpg" />
+    <Content Include="Content\images\Info\lent_fundament2.jpg" />
+    <Content Include="Content\images\Info\lent_fundament3.jpg" />
+    <Content Include="Content\images\Info\lest1.jpg" />
+    <Content Include="Content\images\Info\lest2.jpg" />
+    <Content Include="Content\images\Info\lest3.jpg" />
+    <Content Include="Content\images\Info\monolit_p.jpg" />
+    <Content Include="Content\images\Info\oblicovka.jpg" />
+    <Content Include="Content\images\Info\oblicovka2.jpg" />
+    <Content Include="Content\images\Info\peregorodki.jpg" />
     <Content Include="Content\images\Info\perekryt.jpg" />
+    <Content Include="Content\images\Info\plita3.jpg" />
+    <Content Include="Content\images\Info\plitaperecrtiya.jpg" />
+    <Content Include="Content\images\Info\plit_perecrit.jpg" />
+    <Content Include="Content\images\Info\rov.jpg" />
+    <Content Include="Content\images\Info\steni.jpg" />
+    <Content Include="Content\images\Info\steni2.jpg" />
+    <Content Include="Content\images\Info\steni3.jpg" />
     <Content Include="Content\template\icon\emaill.jpg" />
     <Content Include="Content\template\icon\message.png" />
     <Content Include="Content\template\icon\nameI.jpg" />

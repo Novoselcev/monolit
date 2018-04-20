@@ -1532,3 +1532,18 @@ font-family:MullerBold;
         font-size: 16px;
     }
 }
+
+.img_context, .img_context_right {
+    border: 5px solid #cbc9c9;
+}
+
+.img_context {
+    float: left;
+    margin: 5px 20px 0px 10px;
+
+}
+
+.img_context_right {
+    float: right;
+    margin: 5px 10px 0px 20px;
+}

@@ -1237,23 +1237,25 @@ font-family:MullerBold;
     .button_open_menu_info, .button_open_menu {
         margin: 0;
         position: fixed;
-        top: 28.45em;
-        left: -5.55em;
-        padding: 7px 20px 5px 20px;
+        top: 38.25em;
+        left: -4.7em;
+        padding: 9px 20px 5px 20px;
         background: #ce7374;
         opacity: 0.8;
         text-transform: uppercase;
         color: #fff;
         text-decoration: none;
-        font-family: MullerExtraBold;
+        font-family: MullerBold;
         border: 0;
         -moz-transform: rotate(90deg);
         -webkit-transform: rotate(90deg);
         -o-transform: rotate(90deg);
         writing-mode: tb-rl;
-        font-size: 18px;
+        font-size: 12px;
     }
 
+        
+        
         .button_open_menu_info:hover, .button_open_menu:hover {
             opacity: 1;
             text-decoration: none;
@@ -1261,8 +1263,8 @@ font-family:MullerBold;
         }
 
     .button_open_menu_info {
-        left: -2.1em;
-        top: 20.1em;
+        top: 41.55em;
+        left: -6.7em;
     }
 
     .close_but_menu {
@@ -1275,13 +1277,22 @@ font-family:MullerBold;
 }
 
 @media (min-width:440px) {
-    .button_open_menu_info, .button_open_menu {
-        top: 27.35em;
+    .button_open_menu {
+        top: 36.75em;
+    }
+
+    .button_open_menu_info {
+        top: 38.55em;
+      
     }
     }
 @media (min-width:770px) {
-    .button_open_menu_info, .button_open_menu {
-        top: 21.1em;
+     .button_open_menu {
+        top: 27.2em;
+    }
+
+    .button_open_menu_info {
+        top: 29em;
     }
 }
 
@@ -1520,4 +1531,19 @@ font-family:MullerBold;
         padding: 10px 2em;
         font-size: 16px;
     }
+}
+
+.img_context, .img_context_right {
+    border: 5px solid #cbc9c9;
+}
+
+.img_context {
+    float: left;
+    margin: 5px 20px 0px 10px;
+
+}
+
+.img_context_right {
+    float: right;
+    margin: 5px 10px 0px 20px;
 }
