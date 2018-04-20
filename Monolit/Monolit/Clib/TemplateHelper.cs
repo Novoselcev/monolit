@@ -69,9 +69,10 @@ namespace Monolit.Clib
             tag.AddCssClass("tab_art");
             foreach (var st in spis)
             {
-                tag.InnerHtml += "<tr><td rowspan=\"2\"  valign=\"top\"  style=\"padding: 3px 10px; \"><img src=" + st.Url_Image + " /></td>";
-                tag.InnerHtml += "<td><span style=\"color:#D76366;margin: 0 10px 0 0;font-size:18px;\">" + st.date.ToShortDateString() + "</span><span style=\"color:#1f1e1e;font-size:18px;font-weight:600;\">"+st.Header+ "</span>  </td></tr> ";
-                tag.InnerHtml += "<tr style =\" border-bottom:1px solid #d6d0d0;\"><td style=\"padding-bottom:1em; \">" + st.Description+ "...<a href=\"/Information/" + st.URL+"\">Подробнее</a></td></tr>";
+                tag.InnerHtml += "<tr><td rowspan=\"2\"  valign=\"top\"  style=\"padding: 1em 10px; \"><img src=" + st.Url_Image + " /></td>";
+                tag.InnerHtml += "<td style =\" padding-top:1em;\"><span style=\"color:#D76366;margin: 0 10px 0 0;font-size:18px;\">" + st.date.ToShortDateString() + "</span><span style=\"color:#1f1e1e;font-size:18px;font-weight:600;\">"+st.Header+ "</span>  </td></tr> ";
+                tag.InnerHtml += "<tr><td style=\"padding-bottom:1em; \">" + st.Description+ "...<a href=\"/Information/" + st.URL+"\">Подробнее</a></td></tr>";
+                tag.InnerHtml += "<tr style =\" border-bottom:1px solid #d6d0d0;\"><td></td><td></td></tr>";
             }
             rezult = tag.ToString();
             return rezult;
