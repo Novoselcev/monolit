@@ -49,42 +49,42 @@ $(document).ready(function () {
         }
     });
 
-        $("#prodMenu2").click(function () {
-            if (check) {
-                $("#prodMenu2").animate({ left: 130 }, 500);
-                $(".vert_menu").animate({ left: 305 }, 450);
-                $(".contentM").animate({ "margin-left": "200px" }, 500);
-                $('body,html').animate({ scrollTop: 0 }, 400);
-                check = false;
-            }
-            else {
-                $(".vert_menu").animate({ left: 0 }, 500);
-                $("#prodMenu2").animate({ left: "-6.7em" }, 450);
-                $(".contentM").animate({ "margin-left": "0px" }, 500);
-                check = true;
-            }
-        /* }, function () {
-             $(".vert_menu").animate({ left: 0 }, 500);*/
-    });
-
- /*   ("#prodInfo1").click(function () {
+    $("#prodMenu2").click(function () {
         if (check) {
-            $("#prodInfo1").animate({ left: "5.8em" }, 450);
-            $(".vert_menu").animate({ left: 305 }, 400);
+            $("#prodMenu2").animate({ left: 130 }, 500);
+            $(".vert_menu").animate({ left: 305 }, 450);
             $(".contentM").animate({ "margin-left": "200px" }, 500);
             $('body,html').animate({ scrollTop: 0 }, 400);
             check = false;
         }
         else {
-            $(".vert_menu").animate({ left: 0 }, 450);
-            $("#prodInfo1").animate({ left: "-5.55em" }, 400);
+            $(".vert_menu").animate({ left: 0 }, 500);
+            $("#prodMenu2").animate({ left: "-6.7em" }, 450);
             $(".contentM").animate({ "margin-left": "0px" }, 500);
             check = true;
         }
         /* }, function () {
              $(".vert_menu").animate({ left: 0 }, 500);*/
-/*});
-*/
+    });
+
+    /*   ("#prodInfo1").click(function () {
+           if (check) {
+               $("#prodInfo1").animate({ left: "5.8em" }, 450);
+               $(".vert_menu").animate({ left: 305 }, 400);
+               $(".contentM").animate({ "margin-left": "200px" }, 500);
+               $('body,html').animate({ scrollTop: 0 }, 400);
+               check = false;
+           }
+           else {
+               $(".vert_menu").animate({ left: 0 }, 450);
+               $("#prodInfo1").animate({ left: "-5.55em" }, 400);
+               $(".contentM").animate({ "margin-left": "0px" }, 500);
+               check = true;
+           }
+           /* }, function () {
+                $(".vert_menu").animate({ left: 0 }, 500);*/
+    /*});
+    */
 
 
     $(".usl-block").hover(
@@ -137,9 +137,9 @@ function ModalGood() {
     $("#ModalInfo .modal-dialog .modal-content").css({ 'background-color': '#4d9023' });
     $("#ModalInfo div.modal-header").css({ 'background-color': '#42791f', 'border-bottom': '1px solid #e7f3d9' });
     $("#ModalInfo").modal('show'); setTimeout(function () { $("#ModalInfo").modal('hide'); }, 2500);
-} 
+}
 function ModalBed(phone, email) {
-    $("#ModalInfo h4").text("Предупреждение: сообщение не было отправлено!");
+    $("#ModalInfo h4").text("Предупреждение: ваше письмо не было отпралено")
     if (phone != "") $("#ModalInfo p").html(phone + "</br>" + email); else $("#ModalInfo p").html(email);
     $("#ModalInfo .modal-dialog .modal-content").css({ 'background-color': '#bd3538' });
     $("#ModalInfo div.modal-header").css({ 'background-color': '#9b2d30', 'border-bottom': '1px solid #e7f3d9' });
